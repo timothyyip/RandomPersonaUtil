@@ -29,11 +29,11 @@ public class RandomBusinessGenerator
     {
         try
         {
-            COMPANY_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/companyNames.txt")))));
-            DOMAIN_SUFFIX = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/domainSuffix.txt")))));
-            JOB_TITLE_PART1 = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/jobTitle1.txt")))));
-            JOB_TITLE_PART2 = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/jobTitle2.txt")))));
-            JOB_TITLE_PART3 = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/jobTitle3.txt")))));
+            COMPANY_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/companyNames.txt")),",")));
+            DOMAIN_SUFFIX = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/domainSuffix.txt")),",")));
+            JOB_TITLE_PART1 = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/jobTitle1.txt")),",")));
+            JOB_TITLE_PART2 = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/jobTitle2.txt")),",")));
+            JOB_TITLE_PART3 = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/jobTitle3.txt")),",")));
         }
         catch (IOException ex)
         {

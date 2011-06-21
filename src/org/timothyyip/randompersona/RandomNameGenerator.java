@@ -36,11 +36,11 @@ public class RandomNameGenerator
         {
             
             
-            MALE_FIRST_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/maleNames.txt")))));
-            MALE_TITLES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/maleTitles.txt")))));
-            FEMALE_FIRST_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/femaleNames.txt")))));
-            FEMALE_TITLES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/femaleTitles.txt")))));
-            LAST_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/lastNames.txt")))));
+            MALE_FIRST_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/maleNames.txt")),",")));
+            MALE_TITLES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/maleTitles.txt")),",")));
+            FEMALE_FIRST_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/femaleNames.txt")),",")));
+            FEMALE_TITLES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/femaleTitles.txt")),",")));
+            LAST_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/lastNames.txt")),",")));
         }
         catch (IOException ex)
         {
