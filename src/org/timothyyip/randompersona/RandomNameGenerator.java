@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.math.RandomUtils;
@@ -33,11 +34,13 @@ public class RandomNameGenerator
     {
         try
         {
-            MALE_FIRST_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(FileUtils.readFileToString(new File(RandomNameGenerator.class.getResource("/org/timothyyip/randompersona/resources/maleNames.txt").getFile())), ',')));
-            MALE_TITLES = new ArrayList<String>(Arrays.asList(StringUtils.split(FileUtils.readFileToString(new File(RandomNameGenerator.class.getResource("/org/timothyyip/randompersona/resources/maleTitles.txt").getFile())), ',')));
-            FEMALE_FIRST_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(FileUtils.readFileToString(new File(RandomNameGenerator.class.getResource("/org/timothyyip/randompersona/resources/femaleNames.txt").getFile())), ',')));
-            FEMALE_TITLES = new ArrayList<String>(Arrays.asList(StringUtils.split(FileUtils.readFileToString(new File(RandomNameGenerator.class.getResource("/org/timothyyip/randompersona/resources/femaleTitles.txt").getFile())), ',')));
-            LAST_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(FileUtils.readFileToString(new File(RandomNameGenerator.class.getResource("/org/timothyyip/randompersona/resources/lastNames.txt").getFile())), ',')));
+            
+            
+            MALE_FIRST_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("org/timothyyip/randompersona/resources/maleNames.txt")))));
+            MALE_TITLES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("/org/timothyyip/randompersona/resources/maleTitles.txt")))));
+            FEMALE_FIRST_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("/org/timothyyip/randompersona/resources/femaleNames.txt")))));
+            FEMALE_TITLES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("/org/timothyyip/randompersona/resources/femaleTitles.txt")))));
+            LAST_NAMES = new ArrayList<String>(Arrays.asList(StringUtils.split(IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream("/org/timothyyip/randompersona/resources/lastNames.txt")))));
         }
         catch (IOException ex)
         {
@@ -46,12 +49,12 @@ public class RandomNameGenerator
         }
     }
 
-//    public static void main(String[] args) throws IOException
-//    {
-//        PersonaModel personaModel = new PersonaModel();
-//        createPersonaName(personaModel);
-//        System.out.println(personaModel);
-//    }
+    public static void main(String[] args) throws IOException
+    {
+        
+      
+      
+    }
     public static void createPersonaName(PersonaModel personaModel)
     {
         personaModel.setMale(RandomUtils.nextBoolean());

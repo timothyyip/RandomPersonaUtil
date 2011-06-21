@@ -23,6 +23,7 @@ public class PersonaModel
     private String jobTitle;
     private Date dateOfBirth;
     private boolean male;
+    
 
     public String getTitle()
     {
